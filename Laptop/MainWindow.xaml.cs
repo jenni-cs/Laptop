@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using System.Runtime.Intrinsics.Arm;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -17,10 +18,11 @@ namespace Laptop
     /// </summary>
     public partial class MainWindow : Window
     {
+        List<Laptop> laptoplista = new List<Laptop>();
         public MainWindow()
         {
             InitializeComponent();
-            List<Laptop>  laptoplista = LoadLaptopList();
+            laptoplista = LoadLaptopList();
             var leltariSzamok = laptoplista.Select(l=>l.LeltariSzam).Distinct().OrderBy(x=>x);
             foreach(var leltariszam in leltariSzamok)
             {
@@ -60,6 +62,19 @@ namespace Laptop
                 Dayfee = dayfee;
                 Deposit = deposit;
             }
+        }
+
+        private void laptopok_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var listOfSelectedRental = laptoplista.Where(l=>l.LeltariSzam == laptopok.SelectedItem.ToString()).ToList();
+            
+            leltariSzam.Content = listOfSelectedRental[0].LeltariSzam;
+            model.Content = listOfSelectedRental[0].Model;
+            ram.Content = listOfSelectedRental[0].Ram.ToString();
+            szin.Content = listOfSelectedRental[0].Color.ToString();
+            napiDij.Content = listOfSelectedRental[0].Dayfee.ToString();
+            kaucio.Content = listOfSelectedRental[0].Deposit.ToString();
+            berlesSzam.Content = listOfSelectedRental.Count;
         }
     }
 }

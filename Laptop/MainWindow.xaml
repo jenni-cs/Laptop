@@ -13,28 +13,28 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="0">
-            <Label Content="Leltári számok"/>
-            <ListView x:Name="laptopok"/>
+            <Label Content="Leltári számok" Height="45"/>
+            <ListView x:Name="laptopok" SelectionChanged="laptopok_SelectionChanged"/>
         </StackPanel>
         <StackPanel Grid.Column="1">
-            <Label Content="Laptop adatai"/>
-            <Label Content="Laptop leltári szám"/>
-            <Label Content="Model"/>
-            <Label Content="RAM (GB)"/>
-            <Label Content="Szín"/>
-            <Label Content="Napi bérleti díj"/>
-            <Label Content="Kaució"/>
-            <Label Content="Bérlések darabszáma"/>
+            <Label Content="Laptop adatai" Height="45"/>
+            <Label Content="Laptop leltári szám" Height="30"/>
+            <Label Content="Model" Height="30"/>
+            <Label Content="RAM (GB)" Height="30"/>
+            <Label Content="Szín" Height="30"/>
+            <Label Content="Napi bérleti díj" Height="30"/>
+            <Label Content="Kaució" Height="30"/>
+            <Label Content="Bérlések darabszáma" Height="30"/>
         </StackPanel>
         <StackPanel Grid.Column="2">
-            <Label x:Name="laptopAdatai"/>
-            <Label x:Name="laltariSzam"/>
-            <Label x:Name="model"/>
-            <Label x:Name="ram"/>
-            <Label x:Name="szin"/>
-            <Label x:Name="napiDij"/>
-            <Label x:Name="kaucio"/>
-            <Label x:Name="berlesSzam"/>
+            <Label Content=" " Height="45"/>
+            <Label x:Name="leltariSzam" Height="30"/>
+            <Label x:Name="model" Height="30"/>
+            <Label x:Name="ram" Height="30"/>
+            <Label x:Name="szin" Height="30"/>
+            <Label x:Name="napiDij" Height="30"/>
+            <Label x:Name="kaucio" Height="30"/>
+            <Label x:Name="berlesSzam" Height="30"/>
         </StackPanel>
     </Grid>
 </Window>
